@@ -3,12 +3,12 @@ import oracledb
 # Configurações de conexão
 host = 'bdi.ipg.pt'
 port = '1521'
-service_name = ''
+service_name = 'test'
 username = 'bdi_dai_1707750'
 password = 'bdi'
 
 # Cria a string de conexão
-dsn = oracledb.makedsn(host, port)
+dsn = oracledb.makedsn(host, port, sid=service_name)
 connection = oracledb.connect(user=username, password=password, dsn=dsn)
 
 try:
